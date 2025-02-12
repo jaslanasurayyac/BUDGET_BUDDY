@@ -1,0 +1,14 @@
+
+
+from django.contrib import admin
+from django.urls import path, include
+
+from myapp import views
+
+urlpatterns = [
+    path('',views.login),
+    path('logincode',views.logincode),
+    path('adminhome',views.adminhome),
+
+
+]
