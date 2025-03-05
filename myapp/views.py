@@ -24,3 +24,26 @@ def logincode(request):
 
 def adminhome(request):
     return render(request,'admin/index.html')
+
+
+
+
+
+def AddExpert(request):
+    return render(request,'admin/Add Expert.html')
+def ComplaintReply(request):
+    return render(request,'admin/Complaint Reply.html')
+def ManageExpert(request):
+    return render(request,'admin/Manage Expert.html')
+def ViewComplaintandReply(request):
+    return render(request,'admin/View Complaint and Reply.html')
+def ViewParent(request):
+    return render(request,'admin/View Parent.html')
+def ViewRatingandReview(request):
+    return render(request,'admin/View Rating and Review.html')
+def ViewStudent(request):
+    return render(request,'admin/View Student.html')
+
+
+
+
