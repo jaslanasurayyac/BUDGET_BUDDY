@@ -1,0 +1,61 @@
+{% extends 'expert/index.html' %}
+{% block body %}
+
+<body>
+<form action="/registercode" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="300" border="1">
+    <tr>
+      <td>FirstName </td>
+      <td><input type="text" name="textfield" /></td>
+    </tr>
+    <tr>
+      <td>LastName</td>
+      <td><input type="text" name="textfield2" /></td>
+    </tr>
+    <tr>
+      <td>DOB</td>
+      <td><label>
+        <input type="date" name="textfield9" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>gender</td>
+      <td><input type="text" name="textfield3" /></td>
+    </tr>
+    <tr>
+      <td>image</td>
+      <td><input type="file" name="file" /></td>
+    </tr>
+        <tr>
+      <td>qualification</td>
+      <td><input type="text" name="textfield10" /></td>
+    </tr>
+    <tr>
+      <td>place</td>
+      <td><input type="text" name="textfield4" /></td>
+    </tr>
+    <tr>
+      <td>phone</td>
+      <td><input type="text" name="textfield5" /></td>
+    </tr>
+    <tr>
+      <td>email</td>
+      <td><input type="text" name="textfield6" /></td>
+    </tr>
+    <tr>
+      <td>username</td>
+      <td><input type="text" name="textfield7" /></td>
+    </tr>
+    <tr>
+      <td>password</td>
+      <td><input type="text" name="textfield8" /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="Submit" value="Register" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

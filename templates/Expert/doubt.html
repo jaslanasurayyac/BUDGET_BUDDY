@@ -1,0 +1,172 @@
+{% extends 'expert/index.html' %}
+{% block body %}
+
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="expert_doubt_search">#}
+{#<tr>#}
+{#      <td>Date</td>#}
+{#      <td><label>#}
+{#        <input type="date" name="textfield" />#}
+{#      </label>#}
+{#        <label>#}
+{##}
+{#        <div >#}
+{#          <input type="submit" name="Submit" value="Search" />#}
+{#        </div>#}
+{#      </label></td>#}
+{#    </tr>#}
+{#  <div align="left">#}
+{##}
+{#      {% for i in ob %}#}
+{#    <table width="340" border="1">#}
+{##}
+{#        <tr>#}
+{#        <td>date</td>#}
+{#        <td>{{ i.date}}</td>#}
+{#      </tr>#}
+{#        <td height="33">username:</td>#}
+{#        <td>{{ i.user_id.fname }} {{ i.user_id.lname }}</td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td>doubt</td>#}
+{#        <td>&nbsp;{{ i.doubt }}</td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td>reply</td>#}
+{#        <td>{{i.reply  }}</td>#}
+{#      </tr>#}
+{##}
+{#              <tr>#}
+{#        <td>time</td>#}
+{#        <td>{{ i.time}}</td>#}
+{#      </tr>#}
+{##}
+{#      <tr>#}
+{#        <td colspan="2"><div align="center"><a href="expert_sendReply/{{ i.id }}">Reply</a></div></td>#}
+{#      </tr>#}
+{#      </table>#}
+{#       {% endfor %}#}
+{#  </div>#}
+{#</form>#}
+{#</body>#}
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        input[type="date"],
+        input[type="submit"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: calc(100% - 22px); /* Full width minus padding */
+            box-sizing: border-box;
+            margin-top: 10px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .results {
+            margin-top: 20px;
+        }
+        .result-table {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .result-table a {
+            color: #d9534f;
+            text-decoration: none;
+        }
+        .result-table a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; color: #333;">Doubt Search</h1>
+    <form id="form1" name="form1" method="post" action="expert_doubt_search">
+        <table>
+            <tr>
+                <td>Date</td>
+                <td>
+                    <input type="date" name="textfield" required />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div align="center">
+                        <input type="submit" name="Submit" value="Search" />
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <div class="results">
+        {% for i in ob %}
+        <div class="result-table">
+            <table>
+                <tr>
+                    <td><strong>Date:</strong></td>
+                    <td>{{ i.date }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Username:</strong></td>
+                    <td>{{ i.user_id.fname }} {{ i.user_id.lname }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Doubt:</strong></td>
+                    <td>{{ i.doubt }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Reply:</strong></td>
+                    <td>{{ i.reply }}</td>
+                </tr>
+{#                <tr>#}
+{#                    <td><strong>Time:</strong></td>#}
+{#                    <td>{{ i.time }}</td>#}
+{#                </tr>#}
+                <tr>
+                    <td colspan="2" align="center">
+                        <a href="expert_sendReply/{{ i.id }}">Reply</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends 'admin/index.html' %}
+{% block body %}
+
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="/sendReply_post">#}
+{#  <table width="200" border="1">#}
+{#    <tr>#}
+{#      <td width="75">Reply</td>#}
+{#      <td width="109"><label>#}
+{#        <input type="text" name="textfield" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td colspan="2"><label>#}
+{#        <div align="center">#}
+{#          <input type="submit" name="Submit" value="Send" />#}
+{#          </div>#}
+{#      </label></td>#}
+{#    </tr>#}
+{#  </table>#}
+{#</form>#}
+{#</body>#}
+<body style="align-content: center">
+<form id="form1" name="form1" method="post" action="/sendReply_post">
+    <style>
+{#        body {#}
+{#            font-family: 'Arial', sans-serif;#}
+{#            background-color: #f0f4f8;#}
+{#            padding: 20px;#}
+{#            display: flex;#}
+{#            justify-content: center;#}
+{#            align-items: center;#}
+{#            height: 100vh; /* Full height */#}
+{#        }#}
+
+{#        /* Form container */#}
+        .form-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-left: 35%;
+            align-content: center;
+
+            width: 300px; /* Set a fixed width */
+        }
+{##}
+{#        /* Input fields */#}
+        input[type="text"] {
+            width: 100%; /* Full width */
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #007bff;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+{##}
+{#        /* Submit button */#}
+{#        input[type="submit"] {#}
+{#            background-color: #007bff;#}
+{#            color: white;#}
+{#            padding: 10px;#}
+{#            border: none;#}
+{#            border-radius: 5px;#}
+{#            cursor: pointer;#}
+{#            font-size: 16px;#}
+{#            transition: background-color 0.3s;#}
+{#            width: 100%; /* Full width */#}
+{#        }#}
+{##}
+{#        input[type="submit"]:hover {#}
+{#            background-color: #0056b3; /* Darker shade on hover */#}
+{#        }#}
+{##}
+{#        /* Label styles */#}
+{#        label {#}
+{#            font-weight: bold;#}
+{#            margin-bottom: 5px;#}
+{#            display: block; /* Block display for labels */#}
+{#        }#}
+{##}
+{#        /* Align center */#}
+        .align-center {
+            text-align: center;
+        }
+    </style>
+
+    <div class="form-container" style="align-content: center">
+        <label for="reply">Reply</label>
+        <input type="text" name="textfield" id="reply" placeholder="Type your reply here..." />
+        <div class="align-center">
+            <input type="submit" name="Submit" value="Send" />
+        </div>
+    </div>
+</form>
+</body>
+
+{% endblock %}

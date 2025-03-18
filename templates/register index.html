@@ -1,0 +1,94 @@
+{#<!DOCTYPE html>#}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="../static/register/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="../static/register/css/style.css">
+</head>
+<body>
+
+    <div class="main">
+
+        <section class="signup">
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+            <div class="container">
+                <div class="signup-content">
+                    <form method="POST" id="signup-form" action="/registercode" class="signup-form" enctype="multipart/form-data">
+                        <h2 class="form-title"><u>Expert Register</u></h2>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="textfield" id="name" required placeholder="First Name"/>
+                        </div>
+                          <div class="form-group">
+                            <input type="text" class="form-input" name="textfield2" id="name" required placeholder="last Name"/>
+                        </div>DOB
+                          <div class="form-group">
+                            <input type="date" class="form-input" name="textfield9" id="name" required placeholder="Date of Birth"/>
+                        </div>
+                        Profile Pic
+                          <div class="form-group">
+                            <input type="file" class="form-input" name="file" id="name" required placeholder="Image"/>
+                        </div>
+                          <div class="form-group">
+                            <input type="text" class="form-input" name="textfield10" id="name" required placeholder="Qualification"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="textfield4" id="name" required placeholder="Place"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="post" id="name" required placeholder="Post"/>
+                        </div>
+                          <div class="form-group">
+                       <select name="textfield3" class="form-input" >
+                                <option >          Select Gender        </option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" pattern="[6789][0-9]{9}" required name="textfield5" id="name" placeholder="Phone"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-input" name="textfield6" required id="email" placeholder="Email"/>
+                        </div>
+                        Id Proof
+
+                        <div class="form-group">
+                            <input type="file" class="form-input" name="idproof" required id="" placeholder=""/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="textfield7" required id="name" placeholder="Username"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="textfield8" required id="password" placeholder="Password"/>
+                            <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                        </div>
+{#                        <div class="form-group">#}
+{#                            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />#}
+{#                            <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>#}
+{#                        </div>#}
+
+                        <div class="form-group">
+                            <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up"/>
+                        </div>
+                    </form>
+{#                    <p class="loginhere">#}
+{#                        Have already an account ? <a href="#" class="loginhere-link">Login here</a>#}
+{#                    </p>#}
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script src="../static/register/vendor/jquery/jquery.min.js"></script>
+    <script src="../static/register/js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

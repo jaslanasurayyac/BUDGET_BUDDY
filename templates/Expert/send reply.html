@@ -1,0 +1,92 @@
+{% extends 'expert/index.html' %}
+{% block body %}
+
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="/expert_sendReply_post">#}
+{#  <table width="200" border="1">#}
+{#    <tr>#}
+{#      <td width="75">Reply</td>#}
+{#      <td width="109"><label>#}
+{#        <input type="text" name="textfield" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td colspan="2"><label>#}
+{#        <div align="center">#}
+{#          <input type="submit" name="Submit" value="Send" />#}
+{#          </div>#}
+{#      </label></td>#}
+{#    </tr>#}
+{#  </table>#}
+{#</form>#}
+{#</body>#}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        input[type="text"] {
+            width: calc(100% - 24px); /* Full width minus padding */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Send Reply</h1>
+    <form id="form1" name="form1" method="post" action="/expert_sendReply_post#about">
+        <table>
+            <tr>
+                <td>Reply</td>
+                <td>
+                    <input type="text" name="textfield" required />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div align="center">
+                        <input type="submit" name="Submit" value="Send" />
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+{% endblock %}

@@ -1,0 +1,101 @@
+
+{% extends 'admin/index.html' %}
+{% block body %}
+
+<body>
+<style>
+  /* Style for the form container */
+  #form1 {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+
+  /* Style for the table */
+  #form1 table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  /* Style for table cells */
+  #form1 td {
+    padding: 12px;
+    vertical-align: middle;
+  }
+
+  /* Label styling */
+  #form1 td:first-child {
+    font-weight: bold;
+    color: #333;
+    width: 40%;
+  }
+
+  /* Input field styling */
+  #form1 input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding is included in width */
+  }
+
+  /* Submit button styling */
+  #form1 input[type="submit"] {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+
+  #form1 input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+
+  /* Center the submit button */
+  #form1 .button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+</style>
+
+<form id="form1" name="form1" method="post" action="/admin_change_password_post">
+  {% csrf_token %}
+  <table>
+    <tr>
+      <td>CURRENT PASSWORD</td>
+      <td>
+        <input type="password" name="textfield" required />
+      </td>
+    </tr>
+    <tr>
+      <td>NEW PASSWORD</td>
+      <td>
+        <input type="password" name="textfield2" required />
+      </td>
+    </tr>
+    <tr>
+      <td>CONFIRM PASSWORD</td>
+      <td>
+        <input type="password" name="textfield3" required />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" class="button-container">
+        <input type="submit" name="Submit" value="CHANGE" />
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends 'expert/index.html' %}
+{% block body %}
+
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="">#}
+{#    {% for i in val %}#}
+{#  <table width="692" border="1">#}
+{#    <tr>#}
+{#      <td>Username</td>#}
+{#      <td>Rating</td>#}
+{#      <td>Review</td>#}
+{#      <td>Date </td>#}
+{#    </tr>#}
+{##}
+{#    <tr>#}
+{#      <td>{{ i.date}}</td>#}
+{#      <td>{{ i.rating }}</td>#}
+{#      <td>{{ i.review }}</td>#}
+{#      <td>{{ i.date }}</td>#}
+{#    </tr>#}
+{##}
+{#  </table>#}
+{#    {% endfor %}#}
+{#</form>#}
+{#</body>#}
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        form {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .no-reviews {
+            text-align: center;
+            padding: 20px;
+            font-style: italic;
+            color: #666;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Reviews</h1>
+    <form id="form1" name="form1" method="post" action="">
+        {% if val|length > 0 %}
+            <table>
+                <tr>
+                    <th>Username</th>
+                    <th>Rating</th>
+                    <th>Review</th>
+                    <th>Date</th>
+                </tr>
+                {% for i in val %}
+                <tr>
+                    <td>{{  i.user_id.fname}}</td>
+                    <td>{{ i.rating }}</td>
+                    <td>{{ i.review }}</td>
+                    <td>{{ i.date }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <div class="no-reviews">No reviews available.</div>
+        {% endif %}
+    </form>
+</body>
+
+
+{% endblock %}

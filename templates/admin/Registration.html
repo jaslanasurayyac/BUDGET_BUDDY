@@ -1,0 +1,86 @@
+{% extends 'admin/index.html' %}
+{% block body %}
+
+<body>
+<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="207" border="1">
+    <tr>
+      <td width="45">First name </td>
+      <td width="146"><label>
+        <input type="text" name="textfield" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Last name</td>
+      <td><label>
+        <input type="text" name="textfield2" />
+      </label></td>
+    </tr>
+    
+    <tr>
+      <td>Gender</td>
+      <td><label>
+        <input name="radiobutton" type="radio" value="radiobutton" />
+      m 
+      <input name="radiobutton" type="radio" value="radiobutton" />
+      f</label></td>
+    </tr>
+    <tr>
+      <td>Place</td>
+      <td><label>
+        <input type="text" name="textfield3" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Post</td>
+      <td><label>
+        <input type="text" name="textfield4" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Qualification</td>
+      <td><label>
+        <input type="text" name="textfield5" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Photo</td>
+      <td><label>
+        <input type="file" name="file" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Phone</td>
+      <td><label>
+        <input type="text" name="textfield6" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><label>
+      <input type="text" name="textfield7" /> 
+</label></td>
+    </tr>
+    <tr>
+      <td>Username</td>
+      <td><label>
+        <input type="text" name="textfield8" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td><label>
+        <input type="text" name="textfield9" />
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2"> <label>
+      <div align="center">
+        <input type="submit" name="Submit" value="Register" />
+      </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

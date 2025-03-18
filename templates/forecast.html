@@ -1,0 +1,239 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>#}
+{#<body>#}
+{#<canvas id="myChart" style="width:100%;max-width:600px"></canvas>#}
+{##}
+{#<script>#}
+{#const xValues = [1,2,3,4,5,6,7];#}
+{##}
+{#new Chart("myChart", {#}
+{#  type: "line",#}
+{#  data: {#}
+{#    labels: xValues,#}
+{#    datasets: [{ #}
+{#      data: {{ exp }},#}
+{#      borderColor: "red",#}
+{#      fill: false#}
+{#    }, { #}
+{#      data: {{ sav }},#}
+{#      borderColor: "green",#}
+{#      fill: false#}
+{#    }]#}
+{#  },#}
+{#  options: {#}
+{#    legend: {display: false}#}
+{#  }#}
+{#});#}
+{#</script>#}
+{##}
+{##}
+{##}
+{#<html>#}
+{#<head>#}
+{#    <title>Forecast Chart</title>#}
+{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>#}
+{#    <style>#}
+{##}
+{#        .container {#}
+{#            text-align: center;#}
+{#        }#}
+{#        canvas {#}
+{#            max-width: 90%;#}
+{#            height: auto;#}
+{#        }#}
+{#    </style>#}
+{#</head>#}
+{#<body>#}
+{#    <div class="container">#}
+{#        <h2>Forecast</h2>#}
+{#        <canvas id="myChart"></canvas>#}
+{#    </div>#}
+{##}
+{#    <script>#}
+{#        const xValues = [1,2,3,4,5,6,7]; // Example data points for days#}
+{#        const expData ={{ exp }}; // Example data for exp#}
+{#        const savData = {{ sav }}; // Example data for sav#}
+{##}
+{#        new Chart("myChart", {#}
+{#            type: "line",#}
+{#            data: {#}
+{#                labels: xValues, // X-axis labels (days)#}
+{#                datasets: [#}
+{#                    {#}
+{#                        label: "Expense", // Label for exp dataset#}
+{#                        data: expData, // Data for exp#}
+{#                        borderColor: "red",#}
+{#                        fill: false,#}
+{#                    },#}
+{#                    {#}
+{#                        label: "Income", // Label for sav dataset#}
+{#                        data: savData, // Data for sav#}
+{#                        borderColor: "green",#}
+{#                        fill: false,#}
+{#                    }#}
+{#                ]#}
+{#            },#}
+{#            options: {#}
+{#                title: {#}
+{#                    display: true,#}
+{#                    text: "Forecast",#}
+{#                    fontSize: 18#}
+{#                },#}
+{#                scales: {#}
+{#                    xAxes: [{#}
+{#                        scaleLabel: {#}
+{#                            display: true,#}
+{#                            labelString: 'Days'#}
+{#                        }#}
+{#                    }],#}
+{#                    yAxes: [{#}
+{#                        scaleLabel: {#}
+{#                            display: true,#}
+{#                            labelString: 'Price'#}
+{#                        }#}
+{#                    }]#}
+{#                },#}
+{#                legend: {#}
+{#                    display: true,#}
+{#                    position: 'top'#}
+{#                },#}
+{#            }#}
+{#        });#}
+{#    </script>#}
+{#</body>#}
+{#</html>#}
+
+<html>
+<head>
+    <title>Forecast Chart</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <style>
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7; /* Light grey background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container Styling */
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        /* Heading Styling */
+        h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        /* Canvas Styling */
+        canvas {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Footer Styling */
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Forecast Chart</h2>
+        <p>
+        <form method="post" action="/forecasting_fn1">
+            <select class="form-control" name="cat">
+                <option value="">Select Category</option>
+                {% for i in cat %}
+                    <option value="{{ i }}" {% if i == scat %} selected {% endif %}>{{ i }}</option>
+                {% endfor %}
+            </select>
+        <input type="submit" value="Find">
+        </form>
+        </p>
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script>
+        // Data for X-Axis (Days)
+        const xValues = [1, 2, 3, 4, 5, 6, 7];
+
+        // Dynamic data placeholders (to be replaced with actual values)
+        const expData = {{ exp }};  // Example data for expenses
+        const savData = {{ sav }};  // Example data for savings
+
+        // Create the chart
+        new Chart("myChart", {
+            type: "line",
+            data: {
+                labels: xValues,  // X-axis labels (days)
+                datasets: [
+                    {
+                        label: "Expense",  // Label for exp dataset
+                        data: expData,  // Data for exp
+                        borderColor: "red",
+                        fill: false,
+                    },
+                    {
+                        label: "Income",  // Label for sav dataset
+                        data: savData,  // Data for sav
+                        borderColor: "green",
+                        fill: false,
+                    }
+                ]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: "Forecast",
+                    fontSize: 18
+                },
+                scales: {
+                    xAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Days'
+                        }
+                    }],
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Price'
+                        }
+                    }]
+                },
+                legend: {
+                    display: true,
+                    position: 'top'
+                },
+            }
+        });
+    </script>
+
+    <!-- Footer (Optional) -->
+    <br/>
+{#    <div class="footer">#}
+{#        <p>&copy; 2025 Forecast App | All Rights Reserved</p>#}
+{#    </div>#}
+
+</body>
+</html>

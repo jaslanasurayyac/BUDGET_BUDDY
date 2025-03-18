@@ -1,0 +1,64 @@
+{% extends 'admin/index.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+    <tr>
+      <td>Name</td>
+      <td><label>
+        <input type="text" name="textfield" />
+      </label>
+        <label>
+
+        <div align="right">
+          <input type="submit" name="Submit" value="Search" />
+        </div>
+      </label></td>
+    </tr>
+
+    {% for i in val %}
+
+  <table width="200" border="1" >
+      <tr>
+      <td><img src="media/static/{{ i.photo }} " height="100dp" width="100dp"> </td>
+  </tr>
+
+    <tr>
+      <td>Name</td>
+      <td>{{ i.fname }}{{ i.lname }}</td>
+    </tr>
+    <tr>
+      <td>Address</td>
+      <td>{{ i.place}}</td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td>&nbsp;{{ i.gender }}</td>
+    </tr>
+    <tr>
+      <td>phone</td>
+      <td>{{i.phone }}</td>
+    </tr>
+      <tr>
+      <td>email</td>
+      <td>{{i.email }}</td>
+    </tr>
+
+    <tr>
+      <td colspan="2"><label>
+        <div align="center">
+           <a href="">Accept</a>
+          <a href="#">
+          <label>
+          <a href="">Reject</a>
+      </label></td>
+    </tr>
+  </table>
+
+    {% endfor %}
+
+</form>
+</body>
+{#</html>#}
+{% endblock %}
